@@ -27,7 +27,7 @@ export default function Header() {
                 <option>English</option>
                 <option>Hindi</option>
               </select>
-              <button className="btn btn-danger" type="submit" onClick={clickHandler}>Signin</button>
+              <button className="btn btn-danger" type="submit" onClick={clickHandler}>Sign in</button>
             </form>
           </div>
         </div>
