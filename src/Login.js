@@ -13,8 +13,29 @@ const Login = ({page}) => {
 
     const [isUserExist , setUserExist] = useState(false);
     const [isEmailUsed, setIsEmailUsed] = useState(false);
+    const [emailValid , setEmailValid] = useState(true);
+    const [passwordValid , setPasswordValid] = useState(true);
+
+    const validation = (fieldName, value) => {
+        switch(fieldName) {
+          case 'email':
+            return value.match(/^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i);
+          case 'password':
+            return value.length >= 6;
+          default:
+            break;
+        }
+      };
+
     const ctaClickHandler = (e) => {
         e.preventDefault();
+
+        if(!validation('email', email) || !validation('password', password)){
+            setEmailValid(validation('email', email));
+            setPasswordValid(validation('password', password));
+            return;
+          }
+
         if(page){
       //   navigate('/dashboard');
       signInWithEmailAndPassword(auth, email, password)
@@ -61,7 +82,9 @@ const Login = ({page}) => {
                 <br />
                 <form>
                     <input className="form-control" value={email} onChange={emailOnChangeHandler} type="email" placeholder="Email" />
+                    { !emailValid && <p className="text-danger">Email is invalid/blank</p>}
                     <input className="form-control" value={password} onChange={passwordOnChangeHandler} type="password" placeholder="Password" />
+                    { !passwordValid && <p className="text-danger">Password is invalid/blank</p>}
                     <button className="btn btn-danger btn-block" onClick={ctaClickHandler}>{page ? 'Sign in':'Register'}</button>
                     <br />
                    {

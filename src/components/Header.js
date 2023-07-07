@@ -13,7 +13,7 @@ export default function Header() {
     <header className="topNav">
       <nav className="navbar navbar-expand-md navbar-dark">
         <div className="container-fluid">
-          {/* <a className="navbar-brand" href="https://www.google.com">
+          {/* <a className="navbar-brand" href="#">
             <img class="nav__logo" src="https://www.freepnglogos.com/uploads/netflix-logo-0.png" alt=""  />
           </a> */}
 
