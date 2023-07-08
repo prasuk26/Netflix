@@ -1,6 +1,6 @@
 const Banner = () => {
     return(
-      <div className="banner">
+      <div className="banner bg-dark">
         <div className="banner__contents">
           <h1 className="banner__title">Ginny &amp; Georgia</h1>
           <div className="banner__buttons">
