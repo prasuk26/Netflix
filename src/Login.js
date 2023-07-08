@@ -78,7 +78,7 @@ const Login = ({page}) => {
 
         <div className="login">
             <div className="holder">
-                <h1 className="text-dark">{page ? 'Sign in':'Register'}</h1>
+                <h1 className="text-light">{page ? 'Sign in':'Register'}</h1>
                 <br />
                 <form>
                     <input className="form-control" value={email} onChange={emailOnChangeHandler} type="email" placeholder="Email" />
@@ -90,7 +90,7 @@ const Login = ({page}) => {
                    {
                     page &&  <div className="form-check">
                     <input className="form-check-input " type="checkbox" value="" id="flexCheckDefault" />
-                    <label className="form-check-label text-dark" htmlFor="flexCheckDefault">
+                    <label className="form-check-label text-light" htmlFor="flexCheckDefault">
                         Remember Me
                     </label>
                 </div>
